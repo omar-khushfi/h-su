@@ -6,110 +6,106 @@
   <title>Quran Surahs</title>
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(145deg, #f5f7fa, #e2e8f0);
-      margin: 0;
-      padding: 40px 20px;
-      color: #2d3748;
-    }
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to bottom right, #fff0f5, #ffe0ec);
+    margin: 0;
+    padding: 40px 20px;
+    color: #333;
+  }
 
-    .container {
-      max-width: 800px;
-      margin: auto;
-      background: #ffffff;
-      padding: 40px 30px;
-      border-radius: 20px;
-      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
-    }
+  .container {
+    max-width: 700px;
+    margin: auto;
+    background: #ffffff;
+    padding: 40px 30px;
+    border-radius: 16px;
+    box-shadow: 0 12px 30px rgba(255, 105, 180, 0.2);
+  }
 
-    h1 {
-      font-size: 34px;
-      color: #2b6cb0;
-      margin-bottom: 25px;
-      text-align: center;
-    }
+  h1 {
+    font-size: 32px;
+    color: #d63384;
+    margin-bottom: 25px;
+  }
 
-    .phrase-box {
-      background: #f7fafc;
-      border: 1px solid #e2e8f0;
-      border-radius: 14px;
-      padding: 30px 25px;
-      min-height: 160px;
-      box-shadow: inset 0 0 12px rgba(0, 0, 0, 0.02);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
+  .phrase-box {
+    background: #fff5f8;
+    border: 1px solid #f9d0df;
+    border-radius: 12px;
+    padding: 30px 20px;
+    min-height: 160px;
+    box-shadow: inset 0 0 10px rgba(255, 192, 203, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 
-    .arabic {
-      font-size: 26px;
-      color: #1a202c;
-      margin-bottom: 20px;
-      font-weight: bold;
-      line-height: 1.8;
-      text-align: right;
-      direction: rtl;
-    }
+  .arabic {
+    font-size: 26px;
+    color: #c2185b;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
 
-    .translation {
-      font-size: 18px;
-      color: #4a5568;
-      display: none;
-      background-color: #edf2f7;
-      border-left: 4px solid #63b3ed;
-      padding: 15px;
-      border-radius: 8px;
-      margin-top: 10px;
-    }
+  .translation {
+    font-size: 18px;
+    color: #555;
+    display: none;
+    background-color: #ffe6ef;
+    border-left: 4px solid #f48fb1;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 10px;
+    text-align: left;
+  }
 
-    .buttons {
-      margin-top: 30px;
-      text-align: center;
-    }
+  .buttons {
+    margin-top: 30px;
+  }
 
-    button {
-      background: linear-gradient(to right, #4299e1, #3182ce);
-      color: white;
-      border: none;
-      padding: 12px 24px;
-      margin: 0 10px;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 16px;
-      box-shadow: 0 4px 12px rgba(66, 153, 225, 0.3);
-      transition: all 0.3s ease;
-    }
+  button {
+    background: linear-gradient(to right, #f06292, #ec407a);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    margin: 0 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 0 4px 12px rgba(240, 98, 146, 0.3);
+    transition: all 0.3s ease;
+  }
 
-    button:hover {
-      background: linear-gradient(to right, #3182ce, #4299e1);
-      transform: scale(1.05);
-    }
+  button:hover {
+    background: linear-gradient(to right, #ec407a, #f06292);
+    transform: scale(1.05);
+  }
 
-    .show-answer {
-      background: linear-gradient(to right, #90cdf4, #63b3ed);
-    }
+  .show-answer {
+    background: linear-gradient(to right, #f8bbd0, #f48fb1);
+  }
 
-    .show-answer:hover {
-      background: linear-gradient(to right, #63b3ed, #90cdf4);
-    }
+  .show-answer:hover {
+    background: linear-gradient(to right, #f48fb1, #f8bbd0);
+  }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Quran Surahs</h1>
+    <h1>Islamic Prayer Phrases</h1>
 
     <div class="phrase-box">
-      <div class="arabic" id="arabic-phrase">اضغط على الزر لعرض سورة</div>
+      <div class="arabic" id="arabic-phrase">Click the button below to show a phrase</div>
       <div class="translation" id="english-translation"></div>
     </div>
 
     <div class="buttons">
-      <button id="new-phrase">عرض سورة جديدة</button>
-      <button id="show-translation" class="show-answer">عرض الترجمة</button>
+      <button id="new-phrase">Show New Phrase</button>
+      <button id="show-translation" class="show-answer">Show Translation</button>
     </div>
   </div>
 
-  <script>
+ <script>
     const phrases = [
       {
         arabic: `بِسْمِ اللَّهِ الرَّحْمَـٰنِ الرَّحِيمِ<br>
